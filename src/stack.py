@@ -18,6 +18,8 @@ class Stack:
         """Конструктор класса Stack"""
         self.top = Node(None, None)
 
+    def __str__(self):
+        return
 
     def push(self, data):
         """
@@ -38,6 +40,9 @@ class Stack:
         :return: данные удаленного элемента
         """
         first_out = self.top.data
-        self.top = Node(self.top.next_node.data, self.top.next_node.next_node)
+        if self.top.next_node == None:
+            self.top = None
+        else:
+            self.top = Node(self.top.next_node.data, self.top.next_node.next_node)
 
         return first_out
